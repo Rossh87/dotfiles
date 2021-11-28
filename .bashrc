@@ -135,3 +135,9 @@ if [ -f '/home/ross/google-cloud-sdk/path.bash.inc' ]; then . '/home/ross/google
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/ross/google-cloud-sdk/completion.bash.inc' ]; then . '/home/ross/google-cloud-sdk/completion.bash.inc'; fi
+
+# Specify a format for command line output timestamps, e.g. history command
+HISTTIMEFORMAT="%Y-%m-%d %T " 
+
+# Don't put duplicate lines or lines starting with space in the history
+HISTCONTROL=ignoreboth
