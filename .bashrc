@@ -91,6 +91,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias lt='ls -lth'
 
 #clipboard aliases
 alias setclip='xclip -selection c'
@@ -122,7 +123,9 @@ fi
 
 # set PATH env variable to user's preferences
 export PATH=$PATH:/home/ross/scripts
+export PATH=$PATH:/home/ross/bin
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/ross/go/bin
 export EDITOR=vim
 export NVM_DIR="/home/ross/.nvm"
 
@@ -141,3 +144,4 @@ HISTTIMEFORMAT="%Y-%m-%d %T "
 
 # Don't put duplicate lines or lines starting with space in the history
 HISTCONTROL=ignoreboth
+eval "$(pyenv init -)"
