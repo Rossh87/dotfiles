@@ -1,4 +1,4 @@
 #! /bin/bash
 
 sudo apt-get update && \
-apt-get install tmux
+sudo apt-get install tmux
