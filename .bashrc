@@ -122,6 +122,7 @@ export PATH=$PATH:/home/ross/scripts
 export PATH=$PATH:/home/ross/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/ross/go/bin
+export PATH=$PATH:/home/ross/.deno/bin
 export EDITOR=vim
 export NVM_DIR="/home/ross/.nvm"
 
