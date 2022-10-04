@@ -123,6 +123,8 @@ export PATH=$PATH:/home/ross/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/ross/go/bin
 export PATH=$PATH:/home/ross/.deno/bin
+export PATH="$(yarn global bin):$PATH
+
 export EDITOR=vim
 export NVM_DIR="/home/ross/.nvm"
 
@@ -142,3 +144,8 @@ HISTTIMEFORMAT="%Y-%m-%d %T "
 # Don't put duplicate lines or lines starting with space in the history
 HISTCONTROL=ignoreboth
 eval "$(pyenv init -)"
+
+# pnpm
+export PNPM_HOME="/home/ross/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
