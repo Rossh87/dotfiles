@@ -123,7 +123,7 @@ export PATH=$PATH:/home/ross/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/ross/go/bin
 export PATH=$PATH:/home/ross/.deno/bin
-export PATH="$(yarn global bin):$PATH
+export PATH="$(yarn global bin):$PATH"
 
 export EDITOR=vim
 export NVM_DIR="/home/ross/.nvm"
