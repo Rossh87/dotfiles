@@ -138,6 +138,9 @@ if [ -f '/home/ross/google-cloud-sdk/path.bash.inc' ]; then . '/home/ross/google
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/ross/google-cloud-sdk/completion.bash.inc' ]; then . '/home/ross/google-cloud-sdk/completion.bash.inc'; fi
 
+# Enable shell completion for kubectl
+source <(kubectl completion bash)
+
 # Specify a format for command line output timestamps, e.g. history command
 HISTTIMEFORMAT="%Y-%m-%d %T " 
 
@@ -149,3 +152,7 @@ eval "$(pyenv init -)"
 export PNPM_HOME="/home/ross/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
