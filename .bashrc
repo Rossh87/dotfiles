@@ -141,6 +141,9 @@ if [ -f '/home/ross/google-cloud-sdk/completion.bash.inc' ]; then . '/home/ross/
 # Enable shell completion for kubectl
 source <(kubectl completion bash)
 
+# Enable shell completion for minikube
+source <(minikube completion bash)
+
 # Specify a format for command line output timestamps, e.g. history command
 HISTTIMEFORMAT="%Y-%m-%d %T " 
 
