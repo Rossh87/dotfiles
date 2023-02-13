@@ -130,7 +130,6 @@ export NVM_DIR="/home/ross/.nvm"
 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-function gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/ross/google-cloud-sdk/path.bash.inc' ]; then . '/home/ross/google-cloud-sdk/path.bash.inc'; fi
@@ -149,10 +148,6 @@ HISTTIMEFORMAT="%Y-%m-%d %T "
 
 # Don't put duplicate lines or lines starting with space in the history
 HISTCONTROL=ignoreboth
-
-# Uncomment this if you want pyenv to automatically activate a Python virtual
-# env when it finds a .python-version file:
-# eval "$(pyenv init -)"
 
 # pnpm
 export PNPM_HOME="/home/ross/.local/share/pnpm"
