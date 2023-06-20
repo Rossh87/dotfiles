@@ -173,3 +173,11 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# allow bash scripts to activate conda environments,
+# c.f. https://github.com/conda/conda/issues/7980
+export -f conda
+export -f __conda_activate
+export -f __conda_reactivate
+export -f __conda_hashr
+export -f __conda_exe
+
