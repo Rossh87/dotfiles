@@ -125,10 +125,6 @@ export PATH=$PATH:/home/ross/go/bin
 export PATH=$PATH:/home/ross/.deno/bin
 
 export EDITOR=vim
-export NVM_DIR="/home/ross/.nvm"
-
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/ross/google-cloud-sdk/path.bash.inc' ]; then . '/home/ross/google-cloud-sdk/path.bash.inc'; fi
@@ -153,9 +149,20 @@ export PNPM_HOME="/home/ross/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
+# allow bash scripts to activate conda environments,
+# c.f. https://github.com/conda/conda/issues/7980
+# export -f conda
+# export -f __conda_activate
+# export -f __conda_reactivate
+# export -f __conda_hashr
+# export -f __conda_exe
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f "/home/ross/.ghcup/env" ] && source "/home/ross/.ghcup/env" # ghcup-env
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -172,11 +179,16 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# allow bash scripts to activate conda environments,
-# c.f. https://github.com/conda/conda/issues/7980
-export -f conda
-export -f __conda_activate
-export -f __conda_reactivate
-export -f __conda_hashr
-export -f __conda_exe
+# Initialize direnv for Mia Labs development. This block can be deleted when/if that work is concluded.
+# Begin direnv setup
+eval "$(direnv hook bash)"
+# End direnv setup
+
+# Setup pyenv. Pyenv is used for managing multiple Python versions on the same
+# system.
+# Begin Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+# End Pyenv
 
